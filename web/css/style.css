@@ -29,6 +29,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 20%;
+
+  border: 10px white solid;
 }
 
 #error {
