@@ -40,10 +40,9 @@ def authorise(channel: str, request: Request):
     return False
 
 
-@app.get("/app/fac/api/clear")
-def clear(request: Request):
+@app.get("/app/fac/api/delete")
+def delete(request: Request):
     ip = request.client.host
-    if db.get(ip) is not None:
-        db[ip] = []
+    if db.pop(ip, None) is not None:
         return True
     return False
