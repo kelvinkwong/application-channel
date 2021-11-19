@@ -58,10 +58,11 @@ function login() {
 
 
 function getQueryParam(name) {
+    parameters = decodeURIComponent(decodeURIComponent(location.search));
     if (
         (name = new RegExp(
             "[?&]" + encodeURIComponent(name) + "=([^&]*)"
-            ).exec(location.search))
+            ).exec(parameters))
         )
         return decodeURIComponent(name[1]);
 }
